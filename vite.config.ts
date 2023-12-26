@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   build: {
     lib: {
-      entry: "./src/extension.ts",
+      entry: "./src/vue-app/index.ts",
       formats: ["es", "cjs"],
       fileName: (format) => `index.${format}.js`,
     },

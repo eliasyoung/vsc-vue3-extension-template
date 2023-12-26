@@ -17,7 +17,27 @@
         "command": "vsc-vue3-extension-template.helloWorld",
         "title": "Hello World"
       }
-    ]
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "vsc-vue3-extension-template",
+          "title": "VSC Vue3 Extension Template",
+          "icon": "src/assets/img/default.png"
+        }
+      ]
+    },
+    "views": {
+      "vsc-vue3-extension-template": [
+        {
+          "type": "webview",
+          "id": "base-webview-sidebar",
+          "name": "VSC Vue3 Extension Template",
+          "icon": "src/assets/img/default.png",
+          "contextualTitle": "Vue 3 Base Extension"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
