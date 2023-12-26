@@ -25,6 +25,14 @@ export class BaseWebviewProvider implements vscode.WebviewViewProvider {
       vscode.Uri.joinPath(this._extensionUri, "dist/compiled", "index.es.js")
     );
 
+    const styleResetUri = webview.asWebviewUri(
+      vscode.Uri.joinPath(this._extensionUri, "src/assets/css", "reset.css")
+    );
+
+    const styleVSCodeUri = webview.asWebviewUri(
+      vscode.Uri.joinPath(this._extensionUri, "src/assets/css", "vscode.css")
+    );
+
     const styleMainUri = "";
 
     return `
@@ -35,6 +43,9 @@ export class BaseWebviewProvider implements vscode.WebviewViewProvider {
 					<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 					<link href="${styleMainUri}" rel="stylesheet">
+					<link href="${styleResetUri}" rel="stylesheet">
+          <link href="${styleVSCodeUri}" rel="stylesheet">
+
 
 					<title>Base View Extension</title>
 				</head>
@@ -43,6 +54,9 @@ export class BaseWebviewProvider implements vscode.WebviewViewProvider {
 						const vscode = acquireVsCodeApi();
 					</script>
                     <h1>Hello World!</h1>
+                    <input>
+                    <button id="button">Click Me</button>
+                    <button id="button2">Click Me 2</button>
 					<div id="app"></div>
 
 					<script type="module" src="${scriptUri}"></script>
